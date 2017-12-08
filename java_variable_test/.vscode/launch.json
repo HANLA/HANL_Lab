@@ -1,0 +1,70 @@
+{
+    // IntelliSense를 사용하여 가능한 특성에 대해 알아보세요.
+    // 기존 특성에 대한 설명을 보려면 가리킵니다.
+    // 자세한 내용을 보려면 https://go.microsoft.com/fwlink/?linkid=830387을(를) 방문하세요.
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ForTest<java_variable_test>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.test.Statement.ForTest",
+            "projectName": "java_variable_test",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-OperatorTest<java_variable_test>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.test.variable.OperatorTest",
+            "projectName": "java_variable_test",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-StateTest<java_variable_test>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.test.variable.StateTest",
+            "projectName": "java_variable_test",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SwitchTest<java_variable_test>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.test.variable.SwitchTest",
+            "projectName": "java_variable_test",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-VariableTest<java_variable_test>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.test.variable.VariableTest",
+            "projectName": "java_variable_test",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Attach)",
+            "request": "attach",
+            "hostName": "localhost",
+            "port": 0
+        }
+    ]
+}
