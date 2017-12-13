@@ -8,13 +8,12 @@ public final class Core
     View view = new View();
     Service service = new Service();  
     JavaInput input = new JavaInput();
-;
 
     public void Run()
     {
         while(endFlag != true)
         {
-            
+                    
         }
     }
 }
