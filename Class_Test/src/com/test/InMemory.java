@@ -2,11 +2,9 @@ package com.test;
 
 public class InMemory
 {
-	public String[] ID = new String[MaxArrayCapacity];
-
-	public String[] PW = new String[MaxArrayCapacity];
-
-	public int LastIndex = 0;
+	public Member[] MemberList = new Member[MaxArrayCapacity];
 
 	public static final int MaxArrayCapacity = 100;
+
+	public int LastIndex = -1;
 }
