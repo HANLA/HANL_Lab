@@ -20,15 +20,18 @@ public class Service implements AccessService
     //return -1 id not exist, -2 PW no match, 1 success
 	public void Login(String _ID, String _PW) throws NotFoundIDException, InvalidPasswordException
 	{
+
+
         if(InMemory.GetInstnace().IsIDExist(_ID) == false)
         {
+
             throw new NotFoundIDException();
         }
         else
         {
             if(InMemory.GetInstnace().IsPWMatched(_ID, _PW) == false)
             {
-                throw new InvalidPasswordException();
+                result =  -2;
             }
         }
 
