@@ -1,8 +1,12 @@
 package com.test;
 
+import com.cms.IDAlreadyExistException;
+import com.cms.InvalidPasswordException;
+import com.cms.NotFoundIDException;
+
 public interface AccessService
 {
-	public int Join(String _ID, String _PW);
-	public int Login(String _ID, String _PW);
+	public void Join(String _ID, String _PW) throws NotFoundIDException, InvalidPasswordException, IDAlreadyExistException;
+	public void Login(String _ID, String _PW) throws NotFoundIDException, InvalidPasswordException;
 	
 }

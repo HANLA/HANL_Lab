@@ -5,7 +5,7 @@ public final class Core implements Playable
 {
     private boolean endFlag = false;
     
-    private Output view = new View();
+    private Output output = new View();
     private AccessService service = new Service();  
     private Input input = new JavaInput();
 
@@ -14,7 +14,7 @@ public final class Core implements Playable
     {
         String currentSelectIndex ="";
         Menu currentMenu = Menu.MainMenu;
-        view.SwapPage(currentMenu);
+        output.SwapPage(currentMenu);
     	
         while(endFlag != true)
         {
@@ -28,20 +28,20 @@ public final class Core implements Playable
 
                 case JoinMenu:
                 {
-                    view.ShowMenu();
+                    output.ShowMenu();
                     String id = input.GetStringLineFromMainStream();
-                    view.ShowMenu();
+                    output.ShowMenu();
                     String pw = input.GetStringLineFromMainStream();
 
                     int resultKey = service.Join(id,pw);
 
                     if(resultKey < 0)
                     {
-                        view.ShowErrorMessage(ErrorCode.IDAlreadyExist , id);
+                        output.ShowErrorMessage(ErrorCode.IDAlreadyExist , id);
                     }
 
                     currentMenu = Menu.MainMenu;                    
-                    view.SwapPage(currentMenu);               
+                    output.SwapPage(currentMenu);               
                     
 
                 }
@@ -49,9 +49,9 @@ public final class Core implements Playable
 
                 case LoginMenu:
                 {
-                    view.ShowMenu();
+                    output.ShowMenu();
                     String id = input.GetStringLineFromMainStream();
-                    view.ShowMenu();
+                    output.ShowMenu();
                     String pw = input.GetStringLineFromMainStream();
 
                     int resultKey = service.Login(id,pw);
@@ -60,31 +60,31 @@ public final class Core implements Playable
                     {
                         case -1:
                         {
-                            view.ShowErrorMessage(ErrorCode.IDNotExist, id);
+                            output.ShowErrorMessage(ErrorCode.IDNotExist, id);
                         }
                         break;
 
                         case -2:
                         {
-                            view.ShowErrorMessage(ErrorCode.WrongPassWord);
+                            output.ShowErrorMessage(ErrorCode.WrongPassWord);
                         }
                         break;
 
                         case 1:
                         {
-                            view .ShowMenu();
+                            output .ShowMenu();
                         }
                         break;
                     }
                     currentMenu = Menu.MainMenu;
-                    view.SwapPage(currentMenu);               
+                    output.SwapPage(currentMenu);               
                     
                 }
                 break;
 
                 case MainMenu:
                 {
-                    view.ShowMenu();
+                    output.ShowMenu();
                     currentSelectIndex = input.GetStringLineFromMainStream();
 
                     Menu selectMenu = Menu.FromStringIndex(currentSelectIndex);
@@ -92,11 +92,11 @@ public final class Core implements Playable
                     if(selectMenu != null)
                     {
                         currentMenu = selectMenu;         
-                        view.SwapPage(currentMenu);               
+                        output.SwapPage(currentMenu);               
                     }
                     else
                     {
-                        view.ShowErrorMessage(ErrorCode.WrongInput);
+                        output.ShowErrorMessage(ErrorCode.WrongInput);
                     }
                 }
                 break;

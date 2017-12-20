@@ -1,10 +1,13 @@
 package com.test;
 
+import com.cms.InvalidPasswordException;
+import com.cms.NotFoundIDException;
+
 public class Service implements AccessService
 {    
     @Override
 	// return -> index if -1 => error
-	public int Join(String _ID, String _PW)
+	public void Join(String _ID, String _PW)
 	{
 		int result = -1;
 
@@ -15,27 +18,20 @@ public class Service implements AccessService
 
     @Override
     //return -1 id not exist, -2 PW no match, 1 success
-	public int Login(String _ID, String _PW)
+	public void Login(String _ID, String _PW) throws NotFoundIDException, InvalidPasswordException
 	{
-        int result = -1;
-
         if(InMemory.GetInstnace().IsIDExist(_ID) == false)
         {
-            result = -1;
+            throw new NotFoundIDException();
         }
         else
         {
             if(InMemory.GetInstnace().IsPWMatched(_ID, _PW) == false)
             {
-                result =  -2;
-            }
-            else
-            {
-                result =  1;
+                throw new InvalidPasswordException();
             }
         }
 
-        return result;
     }
 
 }
