@@ -1,8 +1,8 @@
 package com.test;
 
-public class Service
+public class Service implements AccessService
 {    
-    
+    @Override
 	// return -> index if -1 => error
 	public int Join(String _ID, String _PW)
 	{
@@ -13,7 +13,8 @@ public class Service
 		return result;
     }    
 
-    //return -1 id not exist, -2 pw no match, 1 success
+    @Override
+    //return -1 id not exist, -2 PW no match, 1 success
 	public int Login(String _ID, String _PW)
 	{
         int result = -1;
